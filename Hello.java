@@ -1,5 +1,9 @@
 public class Hello {
+
+       Hello(){
+           System.out.print("Hello, World!");
+       }
        public static void main(String[] args) {
-            System.out.println("Hello, World!");
+            Hello helloWorld = new Hello();
        }
 }
