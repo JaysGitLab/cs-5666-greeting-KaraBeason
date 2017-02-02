@@ -1,29 +1,38 @@
 public class Hello {
 
-       private void PrintHello(String name){
+      private String name;
+      public String getName(){
+          return this.name;
+      }
 
-           if (name != null){
-               name = name.substring(0,1).toUpperCase() + name.substring(1);
-               System.out.print("Hello, " + name + "!");
-           }
-           else {
-               System.out.print("Hello, Kara!");
-           }
-       }
+      private String compName;
+      public String getCompName(){
+          if (this.compName.isEmpty()){
+              return "Computer name not set.";
+          }
+          else return this.compName;
+      }
+
+      private void PrintHello(){
+          System.out.print("Hello, " + this.name + "!");
+      }
+
        public static void main(String[] args) {
-          
-           String name;
-          
-           if (args.length == 0)
-           {
-               name = "Kara";
-           }
-           else {
-               name = args[0].toString();
-           }
 
-            Hello helloWorld = new Hello();
-            
-            helloWorld.PrintHello(name);
+          Hello helloWorld = new Hello();
+
+          if (args.length == 0) {
+             helloWorld.name = "Kara";
+           }
+          if (args.length == 1) {
+             helloWorld.name = args[0].toString();
+           }
+          else if (args.length ==2){
+              helloWorld.name = args[0].toString();
+              helloWorld.compName = args[1].toString();
+          }
+          
+          helloWorld.name = helloWorld.name.substring(0,1).toUpperCase() + helloWorld.name.substring(1);
+          helloWorld.PrintHello();
        }
 }
