@@ -22,28 +22,27 @@ public class HelloTest {
       public void PrintWithOneArgument(){
           helloWorld = new Hello();
           helloWorld.main(new String[] {"Charles"});
-	      assertEquals("Hello, Charles!", outContent.toString());
+	      assertEquals("Hello, Charles!\nMy name is Optimus Prime.\nHow are you doing today?\n", outContent.toString());
       }
 
       @Test
       public void PrintWithTwoArguements(){
           helloWorld = new Hello();
           helloWorld.main(new String[] {"Charles", "Computron"});
-          assertEquals("Hello, Charles!", outContent.toString());
-          //assertEquals("Computron", helloWorld.getCompName());
+          assertEquals("Hello, Charles!\nMy name is Computron.\nHow are you doing today?\n", outContent.toString());
       }
 
       @Test
       public void PrintWithNoArgument(){
         helloWorld = new Hello();
         helloWorld.main(new String[] {});
-        assertEquals("Hello, Kara!", outContent.toString());
+        assertEquals("Hello, Kara!\nMy name is Optimus Prime.\nHow are you doing today?\n", outContent.toString());
       }
 
       @Test
       public void FixIncorrectCase(){
           helloWorld = new Hello();
           helloWorld.main(new String[] {"charles"});
-          assertEquals("Hello, Charles!", outContent.toString());
+          assertEquals("Hello, Charles!\nMy name is Optimus Prime.\nHow are you doing today?\n", outContent.toString());
       }
 }
