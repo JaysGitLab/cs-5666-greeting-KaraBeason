@@ -6,10 +6,10 @@ public class HelloTest {
       private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
       
       @Test
-      public void PrintHelloWorld() {
+      public void PrintHelloKara() {
       System.setOut(new PrintStream(outContent));
       Hello helloWorld = new Hello();
-	  assertEquals("Hello, World!", outContent.toString());
+	  assertEquals("Hello, Kara!", outContent.toString());
       System.setOut(null);
       }
 }
