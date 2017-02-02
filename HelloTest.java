@@ -1,15 +1,35 @@
 import java.io.*;
 import static org.junit.Assert.assertEquals;
-import org.junit.Test;
+import org.junit.*;
 
 public class HelloTest {
       private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+      private Hello helloWorld;
       
-      @Test
-      public void PrintHelloWorld() {
-      System.setOut(new PrintStream(outContent));
-      Hello helloWorld = new Hello();
-	  assertEquals("Hello, World!", outContent.toString());
-      System.setOut(null);
+      @Before
+      public void SetUp(){
+       
+        System.setOut(new PrintStream(outContent));
       }
+
+      @After
+      public void TearDown(){
+
+        System.setOut(null);
+      }
+
+      @Test
+      public void PrintWithValidArgument() {
+        helloWorld = new Hello();
+        helloWorld.main(new String[] { "Charles" });
+	    assertEquals("Hello, Charles!", outContent.toString());
+      }
+
+      @Test
+      public void PrintWithNoArgument() {
+        helloWorld = new Hello();
+        helloWorld.main(new String[] {});
+        assertEquals("Hello, Kara!", outContent.toString());
+      }
+            
 }
