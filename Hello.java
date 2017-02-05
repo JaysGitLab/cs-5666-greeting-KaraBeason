@@ -3,7 +3,7 @@ public class Hello {
        private void PrintHello(String name){
 
            if (name != null){
-               name = name.substring(0,1).toUpperCase() + name.substring(1);
+               name = name.substring(0,1).toUpperCase() + name.substring(1, name.length()).toLowerCase();
                System.out.print("Hello, " + name + "!");
            }
            else {
