@@ -21,7 +21,7 @@ public class HelloTest {
       @Test
       public void PrintWithValidArgument() {
         helloWorld = new Hello();
-        helloWorld.main(new String[] { "Charles" });
+        helloWorld.main(new String[] {"Charles"});
 	    assertEquals("Hello, Charles!", outContent.toString());
       }
 
@@ -31,5 +31,11 @@ public class HelloTest {
         helloWorld.main(new String[] {});
         assertEquals("Hello, Kara!", outContent.toString());
       }
-            
+
+      @Test
+      public void FixIncorrectCase(){
+          helloWorld = new Hello();
+          helloWorld.main(new String[] {"charles"});
+          assertEquals("Hello, Charles!", outContent.toString());
+      }
 }
