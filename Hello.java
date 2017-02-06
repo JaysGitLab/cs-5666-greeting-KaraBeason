@@ -13,8 +13,11 @@ public class Hello {
           else return this.compName;
       }
 
-      private void PrintHello(){
-          System.out.print("Hello, " + this.name + "!");
+       private void PrintHello(String name){
+           
+           name = name.substring(0,1).toUpperCase() + name.substring(1, name.length()).toLowerCase();
+           System.out.print("Hello, " + name + "!");
+     
       }
 
        public static void main(String[] args) {
