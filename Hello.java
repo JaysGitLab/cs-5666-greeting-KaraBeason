@@ -3,7 +3,7 @@ public class Hello {
       private String name;
       
       public void setName(String name){
-          this.name = name.substring(0,1).toUpperCase() + name.substring(1);
+          this.name = name.substring(0,1).toUpperCase() + name.substring(1, name.length()).toLowerCase();
       }
 
       public String getName(){
@@ -30,7 +30,7 @@ public class Hello {
           System.out.println("Hello, " + this.getName() + "!");
           System.out.println("My name is " + this.getCompName() + ".");
           System.out.println("How are you doing today?");
-      }
+       }
 
        public static void main(String[] args) {
 
@@ -38,10 +38,10 @@ public class Hello {
 
           if (args.length == 1) {
              helloWorld.setName(args[0].toString());
-           }
-          else if (args.length ==2){
-              helloWorld.setName(args[0].toString());
-              helloWorld.setCompName(args[1].toString());
+          }
+          else if (args.length ==3){
+              helloWorld.name = args[2].toString();
+              helloWorld.compName = args[1].toString();
           }
                    
           helloWorld.PrintHello();
