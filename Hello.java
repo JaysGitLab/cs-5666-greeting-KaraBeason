@@ -7,7 +7,7 @@ public class Hello {
 
       private String compName;
       public String getCompName(){
-          if (this.compName.isEmpty()){
+          if (this.compName == null){
               return "Computer name not set.";
           }
           else return this.compName;
@@ -27,8 +27,8 @@ public class Hello {
           if (args.length == 1) {
              helloWorld.name = args[0].toString();
            }
-          else if (args.length ==2){
-              helloWorld.name = args[0].toString();
+          else if (args.length ==3){
+              helloWorld.name = args[2].toString();
               helloWorld.compName = args[1].toString();
           }
           

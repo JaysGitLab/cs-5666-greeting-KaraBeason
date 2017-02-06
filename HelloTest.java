@@ -28,9 +28,9 @@ public class HelloTest {
       @Test
       public void PrintWithTwoArguements(){
           helloWorld = new Hello();
-          helloWorld.main(new String[] {"Charles", "Computron"});
+          helloWorld.main(new String[] {"-me", "Computron", "Charles"});
           assertEquals("Hello, Charles!", outContent.toString());
-          //assertEquals("Computron", helloWorld.getCompName());
+          assertEquals("Computron", helloWorld.getCompName());
       }
 
       @Test
